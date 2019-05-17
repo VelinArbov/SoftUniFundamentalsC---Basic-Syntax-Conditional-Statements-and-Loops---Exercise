@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _09padwan
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            decimal amountofMoney = decimal.Parse(Console.ReadLine());
+            int students = int.Parse(Console.ReadLine());
+            decimal priceLightsaber = decimal.Parse(Console.ReadLine());
+            decimal priceRobe = decimal.Parse(Console.ReadLine());
+            decimal priceBelt = decimal.Parse(Console.ReadLine());
+            decimal sumLightsaber = priceLightsaber *Math.Ceiling(students * 1.1m);
+            decimal sumRobe = priceRobe * students;
+            int beltsleft = students % 6;
+            decimal sumBelt = students / 6 * 5 + beltsleft;
+            decimal allBelts = sumBelt * priceBelt;
+            decimal totalMoney = allBelts + sumLightsaber + sumRobe;
+            if (totalMoney <= amountofMoney)
+            {
+                Console.WriteLine($"The money is enough - it would cost {totalMoney:f2}lv.");
+            }
+            else
+            {
+                Console.WriteLine($"Ivan Cho will need {totalMoney-amountofMoney:f2}lv more.");
+            }
+
+
+
+
+        }
+    }
+}
