@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Vacation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int students = int.Parse(Console.ReadLine());
+            string typeofStudents = Console.ReadLine();
+            string dayType = Console.ReadLine();
+            double price= 0;
+            double totalprice = 0;
+            if ( dayType == "Friday")
+            {
+                if (typeofStudents == "Students")
+                    price = 8.45;
+                else if (typeofStudents == "Business" )
+                    price = 10.90;
+                else if ( typeofStudents == "Regular")
+                    price = 15;
+            }
+            else if (dayType == "Saturday")
+                 {
+                if (typeofStudents == "Students")
+                    price = 9.8;
+                else if (typeofStudents == "Business" )
+                    price = 15.6;
+                else if ( typeofStudents == "Regular")
+                    price = 20;
+            }
+            else if ( dayType == "Sunday")
+                 {
+                if (typeofStudents == "Students")
+                    price = 10.46;
+                else if (typeofStudents == "Business" )
+                    price = 16;
+                else if ( typeofStudents == "Regular")
+                    price = 22.5;
+            }
+            if (typeofStudents == "Students")
+            {
+                if (students >= 30)
+                {
+                    totalprice = price*students;
+                    totalprice = totalprice - (totalprice *0.15);
+                }
+                else
+                {
+                    totalprice = price * students;
+                }
+
+            }
+            else if (typeofStudents == "Business")
+            {
+                if (students >= 100)
+                {
+                   students= students - 10;
+                    totalprice = students*price;
+
+                }
+                else
+                {
+                    totalprice = price * students;
+                }
+            }
+            else if ( typeofStudents == "Regular")
+            {
+                if ( students >= 10 && students <=20)
+                {
+                    totalprice = price* students;
+                    totalprice = totalprice- (totalprice *0.05);
+                }
+                else
+                {
+                    totalprice = price * students;
+                }
+            }
+            
+            
+            Console.WriteLine("Total price: {0:f2}",totalprice);
+        }
+    }
+}
