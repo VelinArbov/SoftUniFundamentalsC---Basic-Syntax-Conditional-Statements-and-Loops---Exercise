@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _4PrintSUm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstnumer = int.Parse(Console.ReadLine());
+            int secondNumber = int.Parse(Console.ReadLine());
+            int sum = 0;
+            for (int i = firstnumer; i <= secondNumber; i++)
+            {
+                Console.Write("{0} ",i );
+                sum += i;
+                
+            }
+            Console.WriteLine();
+            Console.WriteLine("Sum: {0}",sum);
+        }
+    }
+}
